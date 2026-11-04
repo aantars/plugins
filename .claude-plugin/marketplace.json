@@ -1,0 +1,22 @@
+{
+  "name": "aantars-plugins",
+  "owner": {
+    "name": "aantars",
+    "url": "https://github.com/aantars"
+  },
+  "description": "aantars' Claude Code plugins and mods.",
+  "plugins": [
+    {
+      "name": "usage-limits-band",
+      "source": "./plugins/productivity/usage-limits-band",
+      "description": "Always-visible usage band for the Claude Desktop Code tab: repo, branch, context fill, and the 5-hour and weekly limits with a projection of when you will hit them.",
+      "category": "productivity",
+      "keywords": [
+        "usage",
+        "rate-limits",
+        "context",
+        "desktop"
+      ]
+    }
+  ]
+}
