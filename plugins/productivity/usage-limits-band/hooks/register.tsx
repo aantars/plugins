@@ -267,16 +267,22 @@ export const register: Register = on => {
     const now = (await $.clock.now()) / 1000
     const { Box, Text, Button } = $.ui.resolve(e)
 
+    // The desktop's own secondary button: filled, rounded, with its native hover.
     const toggle = (
       <Button
         key="toggle"
         label={isCollapsed ? 'Show usage' : 'Hide'}
-        plain
-        dimColor
+        variant="secondary"
         onPress={() => update($, collapsed, v => !v)}
       />
     )
-    if (isCollapsed) return <Box flexDirection="row">{toggle}</Box>
+    if (isCollapsed) {
+      return (
+        <Box flexDirection="row" justifyContent="flex-end">
+          {toggle}
+        </Box>
+      )
+    }
 
     const sep = (k: string) => (
       <Text key={k} dimColor>
@@ -350,9 +356,10 @@ export const register: Register = on => {
 
     return (
       <Box flexDirection="column">
-        <Box key="l1" flexDirection="row">
-          {join(line1)}
-          {line1.length > 0 ? <Text key="gap">{'   '}</Text> : null}
+        <Box key="l1" flexDirection="row" justifyContent="space-between">
+          <Box key="l1left" flexDirection="row">
+            {join(line1)}
+          </Box>
           {toggle}
         </Box>
         {limitLines}

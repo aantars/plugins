@@ -9,7 +9,7 @@ Solo muestra datos que da el propio Claude Code: los mismos datos de contexto y 
 La franja se dibuja solo en la pestaña **Code** de Desktop. En la terminal no dibuja nada, así que no se duplica con la status line que ya tengas ahí.
 
 ```
-acme-tools | feature/login | 85.3k ████░░░░░░   Hide
+acme-tools | feature/login | 85.3k ████░░░░░░                     [ Hide ]
 🚀 5h ████░░░░░░ (42%) -> limit in 1h20m (Fri 17/10 14:00)
 🌙 Weekly ██░░░░░░░░ (18%) -> ~limit in 4d5h (Mon 20/10 09:00)
 ```
@@ -38,7 +38,7 @@ La barra de contexto se pone naranja en el último 10 % antes de un tamaño "óp
 
 El texto `limit in` es verde mientras el límite previsto queda lejos del reinicio, amarillo cuando cae antes del último 40 % del tiempo que queda y rojo cuando cae antes del último 10 %.
 
-**Hide**, al final de la primera línea, pliega la franja a un único botón **Show usage**. La elección dura en ese chat; un chat nuevo empieza con la franja abierta.
+**Hide**, un botón pegado a la derecha de la primera línea, pliega la franja a un único botón **Show usage** en ese mismo sitio. La elección dura en ese chat; un chat nuevo empieza con la franja abierta.
 
 ## Preguntas frecuentes
 

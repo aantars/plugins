@@ -9,7 +9,7 @@ It only shows figures Claude Code itself reports: the same context and rate-limi
 The band draws in the Desktop **Code** tab only. In the terminal it draws nothing, so a status line you already have there is not duplicated.
 
 ```
-acme-tools | feature/login | 85.3k ████░░░░░░   Hide
+acme-tools | feature/login | 85.3k ████░░░░░░                     [ Hide ]
 🚀 5h ████░░░░░░ (42%) -> limit in 1h20m (Fri 17/10 14:00)
 🌙 Weekly ██░░░░░░░░ (18%) -> ~limit in 4d5h (Mon 20/10 09:00)
 ```
@@ -38,7 +38,7 @@ The context bar turns orange in the last 10% before an "optimal" size and red pa
 
 The `limit in` text is green while the projected limit is well after the reset, yellow when it falls before the last 40% of the time left, and red when it falls before the last 10%.
 
-**Hide** at the end of the first line folds the band to a single **Show usage** button. The choice lasts for that chat; a new chat starts with the band open.
+**Hide**, a button at the right edge of the first line, folds the band to a single **Show usage** button at the same spot. The choice lasts for that chat; a new chat starts with the band open.
 
 ## Common questions
 
