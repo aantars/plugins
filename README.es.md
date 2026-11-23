@@ -4,7 +4,7 @@
 
 Plugins de Claude Code que uso en el día a día, empaquetados como un marketplace que puedes instalar desde la terminal o desde la app Claude Desktop.
 
-El primero es **usage-limits-band**: una pequeña franja encima de la caja de texto en la pestaña **Code** de Desktop para tener el uso siempre a la vista. Muestra el repo y la rama de git en los que estás, cuánto llevas ocupado de la ventana de contexto y tus límites de 5 horas y semanal, con una estimación de cuándo llegarás a cada uno al ritmo actual. Irán llegando más plugins.
+El primero es **usage-limits-band**: una pequeña franja encima de la caja de texto en la pestaña **Code** de Desktop para tener el uso siempre a la vista. Muestra el repo y la rama de git en los que estás, cuánto llevas ocupado de la ventana de contexto, la carpeta en la que se ejecuta el chat y tus límites de 5 horas y semanal, con una estimación de cuándo llegarás a cada uno al ritmo actual. Irán llegando más plugins.
 
 ## Instalación
 
@@ -57,7 +57,7 @@ Para probar un cambio antes de publicarlo, apunta Claude Code a la carpeta del p
 
 Herramientas para el trabajo diario, no específicas de programación.
 
-- **[usage-limits-band](./plugins/productivity/usage-limits-band)**: Franja siempre visible en la pestaña Code de Desktop con el repo, la rama, el contexto ocupado y los límites de 5 horas y semanal, con una estimación de cuándo llegarás a ellos. En la terminal no aparece, porque ahí ya está tu status line. [Documentación](./docs/productivity/usage-limits-band.es.md)
+- **[usage-limits-band](./plugins/productivity/usage-limits-band)**: Franja siempre visible en la pestaña Code de Desktop con el repo, la rama, el contexto ocupado, la carpeta de trabajo y los límites de 5 horas y semanal, con una estimación de cuándo llegarás a ellos. En la terminal no aparece, porque ahí ya está tu status line. [Documentación](./docs/productivity/usage-limits-band.es.md)
 
 ## Actualizar y desinstalar
 

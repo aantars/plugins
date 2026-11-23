@@ -1,6 +1,6 @@
 ## What it does
 
-`usage-limits-band` keeps your Claude usage in sight while you work in the Claude Desktop **Code** tab. It draws a small band above the prompt with the git repo and branch of the chat in front of you, how full its context window is, and your 5-hour and weekly limits, each with a projection of when you will run out at your current pace.
+`usage-limits-band` keeps your Claude usage in sight while you work in the Claude Desktop **Code** tab. It draws a small band above the prompt with the git repo and branch of the chat in front of you, how full its context window is, the folder the chat runs in, and your 5-hour and weekly limits, each with a projection of when you will run out at your current pace.
 
 It only shows figures Claude Code itself reports: the same context and rate-limit data the terminal status line receives. Where a figure is missing (no repo, no rate-limit reading yet), that part of the band is left out rather than guessed.
 
@@ -9,7 +9,7 @@ It only shows figures Claude Code itself reports: the same context and rate-limi
 The band draws in the Desktop **Code** tab only. In the terminal it draws nothing, so a status line you already have there is not duplicated.
 
 ```
-acme-tools | feature/login | 85.3k ████░░░░░░                     [ Hide ]
+acme-tools | feature/login | 85.3k ████░░░░░░ | C:\work\acme-tools     [ Hide ]
 🚀 5h ████░░░░░░ (42%) -> limit in 1h20m (Fri 17/10 14:00)
 🌙 Weekly ██░░░░░░░░ (18%) -> ~limit in 4d5h (Mon 20/10 09:00)
 ```
@@ -28,6 +28,7 @@ Each chat has its own band, computed from that chat's own folder, so switching c
 | Repo | Name of the git repository's top folder for the chat's directory |
 | Branch | Current branch, in grey; `(detached)` when HEAD is not on a branch |
 | Context | Tokens the last response was answered over, then a 10-cell bar of the window used |
+| Folder | Full path of the directory the chat runs in, in grey |
 | 🚀 5h / 🌙 Weekly | A 10-cell bar of the window used and its percentage |
 | `-> limit in 1h20m` | How long until you hit the limit at your current pace, capped at the reset |
 | `~` before it | No pace measured in this chat yet, so the window's average pace is used |

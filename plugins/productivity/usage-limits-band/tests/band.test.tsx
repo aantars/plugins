@@ -77,11 +77,30 @@ test('band: two lines with repo and branch', async ($, on) => {
   engine(on, { root: 'C:\\w\\my-project', top: 'C:/w/acme-tools', head: 'feature/login' })
   await $.session.start({ cwd: 'C:\\w\\my-project', surface: 'desktop', isInteractive: true })
   const ui = await $.ui.mount({ ...BAND, surface: 'desktop' })
-  expect(await ui.find({ type: 'Text', text: 'my-project' })).toBeFalsy()
+  // The folder name only appears inside the full cwd path, never as a standalone segment.
+  expect(await ui.find({ type: 'Text', text: /^my-project$/ })).toBeFalsy()
   for (const t of ['acme-tools', 'feature/login', '85.3k ', '(42%)', '(18%)', 'Weekly']) {
     expect(await ui.find({ type: 'Text', text: t })).toBeTruthy()
   }
   expect(await ui.find({ type: 'Text', text: /~limit in 2h45m/ })).toBeTruthy()
+  await ui.unmount()
+})
+
+test('band: cwd path is shown after the context', async ($, on) => {
+  engine(on, { root: 'C:\\w\\my-project', top: 'C:/w/acme-tools', head: 'main' })
+  await $.session.start({ cwd: 'C:\\w\\my-project', surface: 'desktop', isInteractive: true })
+  const ui = await $.ui.mount({ ...BAND, surface: 'desktop' })
+  const cwd = await ui.find({ type: 'Text', text: 'C:\\w\\my-project' })
+  const ctx = await ui.find({ type: 'Text', text: '85.3k ' })
+  expect(cwd).toBeTruthy()
+  expect(ctx).toBeTruthy()
+  const all = await (ui as any).findAll?.({ type: 'Text' })
+  if (Array.isArray(all)) {
+    const texts = all.map((t: any) => t.text)
+    expect(texts.findIndex((t: string) => t === 'C:\\w\\my-project')).toBeGreaterThan(
+      texts.findIndex((t: string) => t.startsWith('85.3k')),
+    )
+  }
   await ui.unmount()
 })
 

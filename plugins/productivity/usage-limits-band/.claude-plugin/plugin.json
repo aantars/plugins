@@ -1,7 +1,7 @@
 {
   "name": "usage-limits-band",
-  "version": "0.1.1",
-  "description": "A band above the prompt in the Claude Desktop Code tab: git repo, branch, context fill, and the 5-hour and weekly usage limits with a projection of when you will hit them.",
+  "version": "0.2.0",
+  "description": "A band above the prompt in the Claude Desktop Code tab: git repo, branch, context fill, working folder, and the 5-hour and weekly usage limits with a projection of when you will hit them.",
   "author": {
     "name": "Adolfo",
     "email": "aantars@hotmail.com",

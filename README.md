@@ -4,7 +4,7 @@
 
 Claude Code plugins I use for everyday work, packaged as a marketplace you can install from the terminal or the Claude Desktop app.
 
-The first one is **usage-limits-band**: a small band above the prompt in the Desktop **Code** tab that keeps your usage in sight. It shows the git repo and branch you are on, how full the context window is, and your 5-hour and weekly limits, with a projection of when you will hit each one at your current pace. More plugins will follow.
+The first one is **usage-limits-band**: a small band above the prompt in the Desktop **Code** tab that keeps your usage in sight. It shows the git repo and branch you are on, how full the context window is, the folder the chat runs in, and your 5-hour and weekly limits, with a projection of when you will hit each one at your current pace. More plugins will follow.
 
 ## Installation
 
@@ -57,7 +57,7 @@ To try a change before it is released, point Claude Code at the plugin folder in
 
 Everyday workflow tools, not code-specific.
 
-- **[usage-limits-band](./plugins/productivity/usage-limits-band)**: Always-visible band in the Desktop Code tab with repo, branch, context fill, and the 5-hour and weekly limits with a projection of when you will hit them. Hidden in the terminal, where your own status line does the job. [Docs](./docs/productivity/usage-limits-band.md)
+- **[usage-limits-band](./plugins/productivity/usage-limits-band)**: Always-visible band in the Desktop Code tab with repo, branch, context fill, working folder, and the 5-hour and weekly limits with a projection of when you will hit them. Hidden in the terminal, where your own status line does the job. [Docs](./docs/productivity/usage-limits-band.md)
 
 ## Updating and uninstalling
 

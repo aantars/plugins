@@ -298,7 +298,7 @@ export const register: Register = on => {
       return out
     }
 
-    // Line 1: repo | branch | context
+    // Line 1: repo | branch | context | cwd
     const line1: RenderChildren[] = []
     if (g?.repo) line1.push(<Text key="repo">{g.repo}</Text>)
     if (g?.branch) line1.push(<Text key="branch" dimColor>{g.branch}</Text>)
@@ -314,6 +314,7 @@ export const register: Register = on => {
         </Text>,
       )
     }
+    if (g?.cwd) line1.push(<Text key="cwd" dimColor>{g.cwd}</Text>)
 
     // One line per limit: 5h, then Weekly
     const limitLines: RenderChildren[] = []

@@ -1,6 +1,6 @@
 ## Qué hace
 
-`usage-limits-band` te deja el uso de Claude a la vista mientras trabajas en la pestaña **Code** de Claude Desktop. Dibuja una pequeña franja encima de la caja de texto con el repo y la rama de git del chat que tienes delante, cuánto lleva ocupado su ventana de contexto y tus límites de 5 horas y semanal, cada uno con una estimación de cuándo se agotará al ritmo actual.
+`usage-limits-band` te deja el uso de Claude a la vista mientras trabajas en la pestaña **Code** de Claude Desktop. Dibuja una pequeña franja encima de la caja de texto con el repo y la rama de git del chat que tienes delante, cuánto lleva ocupado su ventana de contexto, la carpeta en la que se ejecuta el chat y tus límites de 5 horas y semanal, cada uno con una estimación de cuándo se agotará al ritmo actual.
 
 Solo muestra datos que da el propio Claude Code: los mismos datos de contexto y de límites que recibe la status line de la terminal. Si falta alguno (no hay repo, todavía no hay lectura de los límites), esa parte de la franja no aparece en lugar de inventarse.
 
@@ -9,7 +9,7 @@ Solo muestra datos que da el propio Claude Code: los mismos datos de contexto y 
 La franja se dibuja solo en la pestaña **Code** de Desktop. En la terminal no dibuja nada, así que no se duplica con la status line que ya tengas ahí.
 
 ```
-acme-tools | feature/login | 85.3k ████░░░░░░                     [ Hide ]
+acme-tools | feature/login | 85.3k ████░░░░░░ | C:\work\acme-tools     [ Hide ]
 🚀 5h ████░░░░░░ (42%) -> limit in 1h20m (Fri 17/10 14:00)
 🌙 Weekly ██░░░░░░░░ (18%) -> ~limit in 4d5h (Mon 20/10 09:00)
 ```
@@ -28,6 +28,7 @@ Cada chat tiene su propia franja, calculada con la carpeta de ese chat, así que
 | Repo | Nombre de la carpeta raíz del repositorio git del directorio del chat |
 | Rama | Rama actual, en gris; `(detached)` cuando HEAD no está en ninguna rama |
 | Contexto | Tokens sobre los que se respondió la última vez, y una barra de 10 celdas con la parte usada de la ventana |
+| Carpeta | Ruta completa del directorio en el que se ejecuta el chat, en gris |
 | 🚀 5h / 🌙 Weekly | Una barra de 10 celdas con la parte usada de la ventana y su porcentaje |
 | `-> limit in 1h20m` | Cuánto falta para llegar al límite al ritmo actual, como mucho hasta el reinicio |
 | `~` delante | Este chat aún no ha medido su ritmo, así que se usa el ritmo medio de la ventana |
